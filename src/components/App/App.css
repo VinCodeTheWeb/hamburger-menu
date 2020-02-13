@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #20232a;
+}
+
+.menu {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #FFF;
+  box-shadow: 0 8px 40px rgba(97, 218, 251, .8);
+  z-index: 9999;
+  transition: all .3s;
+}
+
+.menu:hover {
+  cursor: pointer;
+
+}
+
+.menu:active {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 35px rgba(97, 218, 251, .8);
+}
+
+.menu__icon,
+.menu__icon::after,
+.menu__icon::before {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 3px;
+  border-radius: 10px;
+  background-color: #20232a;
+  transition: all .3s;
+}
+
+.menu__icon::after,
+.menu__icon::before {
+  content: "";
+}
+
+.menu__icon::before {
+  top: -5px;
+  transform: translate(-50%, -5px)
+}
+
+.menu__icon::after {
+  top: 5px;
+  transform: translate(-50%, 5px);
+}
+
+.menu__icon-checked {
+  background-color: transparent;
+}
+
+.menu__icon-checked::before,
+.menu__icon-checked::after {
+  top: 0;
+  transform-origin: center;
+}
+
+.menu__icon-checked::before {
+  transform-origin: left;
+  transform: rotate(-135deg) translate(-50%, 0);
+}
+
+.menu__icon-checked::after {
+  transform-origin: left;
+  transform: rotate(135deg) translate(-50%, 0);
+}
